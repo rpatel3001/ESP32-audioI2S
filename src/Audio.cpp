@@ -19,9 +19,6 @@ fs::SDFATFS SD_SDFAT;
 #endif
 #endif // AUDIO_NO_SD_FS
 
-#define esph_log_i(tag, format, ...) \
-  esp_log_printf_(ESPHOME_LOG_LEVEL_INFO, tag, __LINE__, ESPHOME_LOG_FORMAT(format), ##__VA_ARGS__)
-#define ESP_LOGI(tag, ...) esph_log_i(tag, __VA_ARGS__)
 void esp_log_printf_(int level, const char *tag, int line, const char *format, ...)  // NOLINT
     __attribute__((format(printf, 4, 5)));
 
