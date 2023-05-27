@@ -205,25 +205,25 @@ Audio::Audio(bool internalDAC /* = false */, uint8_t channelEnabled /* = I2S_DAC
                 m_i2s_config.communication_format = (i2s_comm_format_t)(I2S_COMM_FORMAT_I2S_MSB);
             #endif
         
-            ESP_LOGI("i2saudio", "mode %d", m_i2s_config.mode);
-            ESP_LOGI("i2saudio", "sample_rate %d", m_i2s_config.sample_rate);
-            ESP_LOGI("i2saudio", "bits_per_sample %d", m_i2s_config.bits_per_sample);
-            ESP_LOGI("i2saudio", "channel_format %d", m_i2s_config.channel_format);
-            ESP_LOGI("i2saudio", "communication_format %d", m_i2s_config.communication_format);
-            ESP_LOGI("i2saudio", "intr_alloc_flags %d", m_i2s_config.intr_alloc_flags);
-            ESP_LOGI("i2saudio", "dma_buf_count %d", m_i2s_config.dma_buf_count);
-            ESP_LOGI("i2saudio", "dma_buf_len %d", m_i2s_config.dma_buf_len);
-            ESP_LOGI("i2saudio", "use_apll %d", m_i2s_config.use_apll);
-            ESP_LOGI("i2saudio", "tx_desc_auto_clear %d", m_i2s_config.tx_desc_auto_clear);
-            ESP_LOGI("i2saudio", "fixed_mclk %d", m_i2s_config.fixed_mclk);
-            ESP_LOGI("i2saudio", "mclk_multiple %d", m_i2s_config.mclk_multiple);
-            ESP_LOGI("i2saudio", "bits_per_chan %d", m_i2s_config.bits_per_chan);
-            ESP_LOGI("i2saudio", "chan_mask %d", m_i2s_config.chan_mask);
-            ESP_LOGI("i2saudio", "total_chan %d", m_i2s_config.total_chan);
-            ESP_LOGI("i2saudio", "left_align %d", m_i2s_config.left_align);
-            ESP_LOGI("i2saudio", "big_edin %d", m_i2s_config.big_edin);
-            ESP_LOGI("i2saudio", "bit_order_msb %d", m_i2s_config.bit_order_msb);
-            ESP_LOGI("i2saudio", "skip_msk %d", m_i2s_config.skip_msk);
+            AUDIO_INFO("mode %d", m_i2s_config.mode);
+            AUDIO_INFO("sample_rate %d", m_i2s_config.sample_rate);
+            AUDIO_INFO("bits_per_sample %d", m_i2s_config.bits_per_sample);
+            AUDIO_INFO("channel_format %d", m_i2s_config.channel_format);
+            AUDIO_INFO("communication_format %d", m_i2s_config.communication_format);
+            AUDIO_INFO("intr_alloc_flags %d", m_i2s_config.intr_alloc_flags);
+            AUDIO_INFO("dma_buf_count %d", m_i2s_config.dma_buf_count);
+            AUDIO_INFO("dma_buf_len %d", m_i2s_config.dma_buf_len);
+            AUDIO_INFO("use_apll %d", m_i2s_config.use_apll);
+            AUDIO_INFO("tx_desc_auto_clear %d", m_i2s_config.tx_desc_auto_clear);
+            AUDIO_INFO("fixed_mclk %d", m_i2s_config.fixed_mclk);
+            AUDIO_INFO("mclk_multiple %d", m_i2s_config.mclk_multiple);
+            AUDIO_INFO("bits_per_chan %d", m_i2s_config.bits_per_chan);
+            AUDIO_INFO("chan_mask %d", m_i2s_config.chan_mask);
+            AUDIO_INFO("total_chan %d", m_i2s_config.total_chan);
+            AUDIO_INFO("left_align %d", m_i2s_config.left_align);
+            AUDIO_INFO("big_edin %d", m_i2s_config.big_edin);
+            AUDIO_INFO("bit_order_msb %d", m_i2s_config.bit_order_msb);
+            AUDIO_INFO("skip_msk %d", m_i2s_config.skip_msk);
 
             i2s_driver_install((i2s_port_t)m_i2s_num, &m_i2s_config, 0, NULL);
             i2s_set_dac_mode((i2s_dac_mode_t)m_f_channelEnabled);
