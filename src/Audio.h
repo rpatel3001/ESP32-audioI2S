@@ -138,7 +138,6 @@ public:
     void     resetBuffer();                     // restore defaults
     bool     havePSRAM() { return m_f_psram; };
 
-protected:
     size_t   m_buffSizePSRAM    = 300000;   // most webstreams limit the advance to 100...300Kbytes
     size_t   m_buffSizeRAM      = 1600 * 5;
     size_t   m_buffSize         = 0;
@@ -211,7 +210,6 @@ public:
     int getCodec() {return m_codec;}
     const char *getCodecname() {return codecname[m_codec];}
 
-private:
 
     #ifndef ESP_ARDUINO_VERSION_VAL
         #define ESP_ARDUINO_VERSION_MAJOR 0
@@ -438,7 +436,6 @@ private:
         return hash;
 	}
 
-private:
     const char *codecname[9] = {"unknown", "WAV", "MP3", "AAC", "M4A", "FLAC", "OGG", "OGG FLAC", "OPUS"};
     enum : int { APLL_AUTO = -1, APLL_ENABLE = 1, APLL_DISABLE = 0 };
     enum : int { EXTERNAL_I2S = 0, INTERNAL_DAC = 1, INTERNAL_PDM = 2 };
