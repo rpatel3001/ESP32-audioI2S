@@ -204,26 +204,6 @@ Audio::Audio(bool internalDAC /* = false */, uint8_t channelEnabled /* = I2S_DAC
             #else
                 m_i2s_config.communication_format = (i2s_comm_format_t)(I2S_COMM_FORMAT_I2S_MSB);
             #endif
-        
-            AUDIO_INFO("mode %d", m_i2s_config.mode);
-            AUDIO_INFO("sample_rate %d", m_i2s_config.sample_rate);
-            AUDIO_INFO("bits_per_sample %d", m_i2s_config.bits_per_sample);
-            AUDIO_INFO("channel_format %d", m_i2s_config.channel_format);
-            AUDIO_INFO("communication_format %d", m_i2s_config.communication_format);
-            AUDIO_INFO("intr_alloc_flags %d", m_i2s_config.intr_alloc_flags);
-            AUDIO_INFO("dma_buf_count %d", m_i2s_config.dma_buf_count);
-            AUDIO_INFO("dma_buf_len %d", m_i2s_config.dma_buf_len);
-            AUDIO_INFO("use_apll %d", m_i2s_config.use_apll);
-            AUDIO_INFO("tx_desc_auto_clear %d", m_i2s_config.tx_desc_auto_clear);
-            AUDIO_INFO("fixed_mclk %d", m_i2s_config.fixed_mclk);
-            AUDIO_INFO("mclk_multiple %d", m_i2s_config.mclk_multiple);
-            AUDIO_INFO("bits_per_chan %d", m_i2s_config.bits_per_chan);
-            AUDIO_INFO("chan_mask %d", m_i2s_config.chan_mask);
-            AUDIO_INFO("total_chan %d", m_i2s_config.total_chan);
-            AUDIO_INFO("left_align %d", m_i2s_config.left_align);
-            AUDIO_INFO("big_edin %d", m_i2s_config.big_edin);
-            AUDIO_INFO("bit_order_msb %d", m_i2s_config.bit_order_msb);
-            AUDIO_INFO("skip_msk %d", m_i2s_config.skip_msk);
 
             i2s_driver_install((i2s_port_t)m_i2s_num, &m_i2s_config, 0, NULL);
             i2s_set_dac_mode((i2s_dac_mode_t)m_f_channelEnabled);
