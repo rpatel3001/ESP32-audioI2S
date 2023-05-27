@@ -12,6 +12,7 @@
 #include "mp3_decoder/mp3_decoder.h"
 #include "aac_decoder/aac_decoder.h"
 #include "flac_decoder/flac_decoder.h"
+#include "esphome/core/log.h"
 
 #ifndef AUDIO_NO_SD_FS
 #ifdef SDFATFS_USED
@@ -202,25 +203,25 @@ Audio::Audio(bool internalDAC /* = false */, uint8_t channelEnabled /* = I2S_DAC
                 m_i2s_config.communication_format = (i2s_comm_format_t)(I2S_COMM_FORMAT_I2S_MSB);
             #endif
         
-            log_e("mode %d", m_i2s_config.mode);
-            log_e("sample_rate %d", m_i2s_config.sample_rate);
-            log_e("bits_per_sample %d", m_i2s_config.bits_per_sample);
-            log_e("channel_format %d", m_i2s_config.channel_format);
-            log_e("communication_format %d", m_i2s_config.communication_format);
-            log_e("intr_alloc_flags %d", m_i2s_config.intr_alloc_flags);
-            log_e("dma_buf_count %d", m_i2s_config.dma_buf_count);
-            log_e("dma_buf_len %d", m_i2s_config.dma_buf_len);
-            log_e("use_apll %d", m_i2s_config.use_apll);
-            log_e("tx_desc_auto_clear %d", m_i2s_config.tx_desc_auto_clear);
-            log_e("fixed_mclk %d", m_i2s_config.fixed_mclk);
-            log_e("mclk_multiple %d", m_i2s_config.mclk_multiple);
-            log_e("bits_per_chan %d", m_i2s_config.bits_per_chan);
-            log_e("chan_mask %d", m_i2s_config.chan_mask);
-            log_e("total_chan %d", m_i2s_config.total_chan);
-            log_e("left_align %d", m_i2s_config.left_align);
-            log_e("big_edin %d", m_i2s_config.big_edin);
-            log_e("bit_order_msb %d", m_i2s_config.bit_order_msb);
-            log_e("skip_msk %d", m_i2s_config.skip_msk);
+            ESP_LOGI("i2saudio", "mode %d", m_i2s_config.mode);
+            ESP_LOGI("i2saudio", "sample_rate %d", m_i2s_config.sample_rate);
+            ESP_LOGI("i2saudio", "bits_per_sample %d", m_i2s_config.bits_per_sample);
+            ESP_LOGI("i2saudio", "channel_format %d", m_i2s_config.channel_format);
+            ESP_LOGI("i2saudio", "communication_format %d", m_i2s_config.communication_format);
+            ESP_LOGI("i2saudio", "intr_alloc_flags %d", m_i2s_config.intr_alloc_flags);
+            ESP_LOGI("i2saudio", "dma_buf_count %d", m_i2s_config.dma_buf_count);
+            ESP_LOGI("i2saudio", "dma_buf_len %d", m_i2s_config.dma_buf_len);
+            ESP_LOGI("i2saudio", "use_apll %d", m_i2s_config.use_apll);
+            ESP_LOGI("i2saudio", "tx_desc_auto_clear %d", m_i2s_config.tx_desc_auto_clear);
+            ESP_LOGI("i2saudio", "fixed_mclk %d", m_i2s_config.fixed_mclk);
+            ESP_LOGI("i2saudio", "mclk_multiple %d", m_i2s_config.mclk_multiple);
+            ESP_LOGI("i2saudio", "bits_per_chan %d", m_i2s_config.bits_per_chan);
+            ESP_LOGI("i2saudio", "chan_mask %d", m_i2s_config.chan_mask);
+            ESP_LOGI("i2saudio", "total_chan %d", m_i2s_config.total_chan);
+            ESP_LOGI("i2saudio", "left_align %d", m_i2s_config.left_align);
+            ESP_LOGI("i2saudio", "big_edin %d", m_i2s_config.big_edin);
+            ESP_LOGI("i2saudio", "bit_order_msb %d", m_i2s_config.bit_order_msb);
+            ESP_LOGI("i2saudio", "skip_msk %d", m_i2s_config.skip_msk);
 
             i2s_driver_install((i2s_port_t)m_i2s_num, &m_i2s_config, 0, NULL);
             i2s_set_dac_mode((i2s_dac_mode_t)m_f_channelEnabled);
